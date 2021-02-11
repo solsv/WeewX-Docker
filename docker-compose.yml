@@ -4,7 +4,7 @@ services:
   weewx-core:
     container_name: weewx-core
     image: weewx
-    mac_address: d0:ca:ab:cd:ca:ca
+#    mac_address: d0:ca:ab:cd:ca:ca
 #    cap_add:
 #      - NET_ADMIN
 #    networks:
