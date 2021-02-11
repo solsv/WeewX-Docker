@@ -12,9 +12,9 @@ services:
 #        ipv4_address: 192.168.1.49
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${PWD}/data/weewx.conf:/home/weewx/weewx.conf
-      - ${PWD}/data/html/:/home/weewx/public_html/
-      - ${PWD}/data/archive:/home/weewx/archive/
+      - /home/docker/weewx/data/weewx.conf:/home/weewx/weewx.conf
+      - /home/docker/weewx/data/html/:/home/weewx/public_html/
+      - /home/docker/weewx/data/archive:/home/weewx/archive/
     restart: unless-stopped
 
   weewx-web:
@@ -26,8 +26,8 @@ services:
       - NET_ADMIN
     volumes:
       - /etc/localtime:/etc/localtime:ro
-      - ${PWD}/data/html/:/usr/share/nginx
-      - ${PWD}/src/default:/etc/nginx/conf.d/default.conf
+      - /home/docker/weewx/data/html/:/usr/share/nginx
+      - /home/docker/weewx/src/default:/etc/nginx/conf.d/default.conf
     restart: unless-stopped
     ports:
       - "8080:8080"
