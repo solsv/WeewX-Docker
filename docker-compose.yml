@@ -1,4 +1,4 @@
-version: '3'
+#version: ''
 services:
 
   weewx-core:
@@ -8,8 +8,8 @@ services:
     cap_add:
       - NET_ADMIN
     networks:
-      pihole_pihole_network:
-        ipv4_address: 192.168.X.X
+      external_network:
+#        ipv4_address: 192.168.X.X
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${PWD}/data/weewx.conf:/home/weewx/weewx.conf
@@ -33,5 +33,5 @@ services:
       - "8080:8080"
       
 networks:
-  pihole_pihole_network:
+  external_network:
     external: true
