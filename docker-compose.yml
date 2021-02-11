@@ -32,6 +32,6 @@ services:
     ports:
       - "8080:8080"
       
-networks:
-  external_network:
-    external: true
+#networks:
+#  external_network:
+#    external: true
