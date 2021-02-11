@@ -1,14 +1,14 @@
-#version: ''
+version: '2'
 services:
 
   weewx-core:
     container_name: weewx-core
     image: weewx
 #    mac_address: d0:ca:ab:cd:ca:ca
-#    cap_add:
-#      - NET_ADMIN
-#    networks:
-#      external_network:
+    cap_add:
+      - NET_ADMIN
+    networks:
+      external_network:
 #        ipv4_address: 192.168.X.X
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -22,8 +22,8 @@ services:
     image: nginx:alpine
     depends_on:
       - weewx-core
-#    cap_add:
-#      - NET_ADMIN
+    cap_add:
+      - NET_ADMIN
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${PWD}/data/html/:/usr/share/nginx
@@ -32,6 +32,6 @@ services:
     ports:
       - "8080:8080"
       
-#networks:
-#  external_network:
-#    external: true
+networks:
+  external_network:
+    external: true
