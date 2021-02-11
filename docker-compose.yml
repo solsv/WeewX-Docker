@@ -7,8 +7,8 @@ services:
     mac_address: d0:ca:ab:cd:ca:ca
     cap_add:
       - NET_ADMIN
-    networks:
-      external_network:
+#    networks:
+#      external_network:
 #        ipv4_address: 192.168.X.X
     volumes:
       - /etc/localtime:/etc/localtime:ro
@@ -32,6 +32,6 @@ services:
     ports:
       - "8080:8080"
       
-networks:
-  external_network:
-    external: true
+#networks:
+#  external_network:
+#    external: true
