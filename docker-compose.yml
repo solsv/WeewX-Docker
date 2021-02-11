@@ -7,9 +7,9 @@ services:
 #    mac_address: d0:ca:ab:cd:ca:ca
     cap_add:
       - NET_ADMIN
-    networks:
-      external_network:
-        ipv4_address: 192.168.1.49
+#    networks:
+#      external_network:
+#        ipv4_address: 192.168.1.49
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - ${PWD}/data/weewx.conf:/home/weewx/weewx.conf
